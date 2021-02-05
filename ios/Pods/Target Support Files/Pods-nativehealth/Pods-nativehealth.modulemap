@@ -1,0 +1,6 @@
+module Pods_nativehealth {
+  umbrella header "Pods-nativehealth-umbrella.h"
+
+  export *
+  module * { export * }
+}

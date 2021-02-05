@@ -1,0 +1,128 @@
+{
+    "resourceType" : "Bundle",
+    "type" : "transaction",
+    "entry" : [
+        {
+            "fullUrl": "urn:uuid:patient",
+            "resource" : {
+                "resourceType" : "Patient",
+                "name" : [
+                    {
+                        "given": ["Lola"],
+                        "family": "Tes"
+                    }
+                        ]
+                    },
+                "request" : {
+                    "method" : "POST",
+                    "url" : "Patient"
+                }
+           },
+        {
+            "resource" : {
+                "resourceType" : "Observation",
+                "code" : {
+                    "coding" : [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "15074-8",
+                            "display": "Glucose [Moles/volume] in Blood"
+                        }
+                    ]
+                },
+                "subject": {
+                    "type" : "Patient",
+                    "reference" : "urn:uuid:patient"
+                },
+                "valueQuantity": {
+                    "value": "",
+                    "unit": "mmol/l",
+                    "system": "http://unitofmeasure.org",
+                    "code": "mmol/L"
+                }
+            },
+            "request" : {
+                "method" : "POST"
+            }
+        },
+        {
+            "resource" : {
+                "resourceType" : "Observation",
+                "component": [
+                    {
+                      "code": {
+                        "coding": [
+                          {
+                            "system": "http://loinc.org",
+                            "code": "8480-6",
+                            "display": "Systolic blood pressure"
+                          }
+                        ]
+                      },
+                      "subject": {
+                        "type" : "Patient",
+                        "reference" : "urn:uuid:patient"
+                    },
+                      "valueQuantity": {
+                        "value": "",
+                        "unit": "mmHg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mm[Hg]"
+                      }
+                    },
+                    {
+                      "code": {
+                        "coding": [
+                          {
+                            "system": "http://loinc.org",
+                            "code": "8462-4",
+                            "display": "Diastolic blood pressure"
+                          }
+                        ]
+                      },
+                      "subject": {
+                        "type" : "Patient",
+                        "reference" : "urn:uuid:patient"
+                    },
+                      "valueQuantity": {
+                        "value": "",
+                        "unit": "mmHg",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "mm[Hg]"
+                      }
+                    }
+                  ]
+            },
+            "request" : {
+                "method" : "POST"
+            }
+        },
+        {
+            "resource" : {
+                "resourceType" : "Observation",
+                "code" : {
+                    "coding" : [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "18310-5",
+                            "display": "Body temperature"
+                        }
+                    ]
+                },
+                "subject": {
+                    "type" : "Patient",
+                    "reference" : "urn:uuid:patient"
+                },
+                "valueQuantity": {
+                    "value": "",
+                    "unit": "degrees C",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "Cel"
+                  }
+            },
+            "request" : {
+                "method" : "POST"
+            }
+        }
+    ]
+}
